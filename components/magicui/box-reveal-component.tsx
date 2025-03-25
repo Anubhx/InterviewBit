@@ -21,14 +21,14 @@ const BoxRevealDemo = () => {
   return (
     <div className="h-full w-full max-w-[38rem] items-center justify-center overflow-hidden pt-8">
       <BoxReveal boxColor={"transparent"} duration={0.5}>
-        <div className="flex items-center justify-between gap-8 pt-4 pr-3">
+        <div className="flex items-center justify-between gap-10 pt-4 pr-3">
           <h1
             className={cn(
               GeistMono.variable,
               "font-mono text-3xl md:text-7xl font-bold pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#784fe0] to-[#000] bg-clip-text text-center  leading-none tracking-tighter text-transparent select-none mb-3"
             )}
           >
-            Praxis AI
+           InterviewAID
           </h1>
           <svg
             className="-mt-3 hover:rotate-180 transition-transform duration-500 ease-in-out cursor-pointer"

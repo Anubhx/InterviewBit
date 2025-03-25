@@ -10,8 +10,8 @@ import { GradineBg } from "@/components/gradient-bg";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "Praxis",
-  description: "Experince the future of interviews with praxis",
+  title: "InterviewAID",
+  description: "Experince the future of interviews with InterviewAID",
   icons: { icon: "/logo.png" },
 };
 

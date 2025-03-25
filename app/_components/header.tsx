@@ -29,6 +29,19 @@ const Header = () => {
       index: 1,
       label: "Dashboard",
       href: "/dashboard",
+
+    },
+    {
+      index: 2,
+      label: "Upgrade",
+      href: "/dashboard",
+      
+    },
+    {
+      index: 3,
+      label: "How it works",
+      href: "/dashboard",
+      
     },
   ];
 
@@ -39,10 +52,10 @@ const Header = () => {
         <h1
           className={cn(
             GeistMono.variable,
-            "font-mono text-5xl font-bold pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#784fe0] to-[#000] bg-clip-text text-center  leading-none tracking-tighter text-transparent select-none"
+            "font-mono text-5xl font-bold pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#2e3779] to-[#000] bg-clip-text text-center  leading-none tracking-tighter text-transparent select-none"
           )}
         >
-          praxis
+          InterviewAID
         </h1>
       </Link>
       <div className="hidden lg:block">
