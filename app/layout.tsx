@@ -8,6 +8,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Header from "./_components/header";
 import { GradineBg } from "@/components/gradient-bg";
 import { Toaster } from "@/components/ui/sonner";
+import Upgrade from "./_components/upgrade";
 
 export const metadata: Metadata = {
   title: "InterviewAID",
@@ -26,6 +27,7 @@ export default function RootLayout({
         <body className={cn(GeistMono.variable, "font-mono")}>
           <GradineBg />
           <Header />
+          {/* <Upgrade/> */}
           {children}
           <Toaster/>
         </body>
