@@ -26,7 +26,7 @@ const Header = () => {
   // Updated routes: note that the How It Works route now points to /how-it-works.
   const routes = [
     { index: 1, label: "Dashboard", href: "/dashboard" },
-    { index: 2, label: "Upgrade", href: "/Upgrade" },
+    { index: 2, label: "Upgrade", href: "/upgrade" },
     { index: 3, label: "How it Works", href: "/how-it-works" },
   ];
 

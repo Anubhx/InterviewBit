@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AudioLines, Sparkles } from "lucide-react";
 import useSpeechToText from "react-hook-speech-to-text";
@@ -35,6 +35,7 @@ export const QuestionsSection = ({
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
   const [finalanswer, setFinalAnswer] = useState<string>("");
+  const [recordingLock, setRecordingLock] = useState(false);
 
   const {
     error,
@@ -62,7 +63,7 @@ export const QuestionsSection = ({
       speech.onend = () => setSpeaking(false);
       window.speechSynthesis.speak(speech);
     } else {
-      toast("Sorry your browser does not support text to speech");
+      toast("Sorry, your browser does not support text to speech");
     }
   };
 
@@ -74,18 +75,23 @@ export const QuestionsSection = ({
     setFinalAnswer(userAnswer);
   }, [isRecording, userAnswer]);
 
-  const RecordAnswer = () => {
+  // Use useCallback for stable function identity
+  const RecordAnswer = useCallback(async () => {
+    // Prevent multiple rapid clicks
+    if (recordingLock) return;
+    setRecordingLock(true);
     if (isRecording) {
-      stopSpeechToText();
+      await stopSpeechToText();
     } else {
-      startSpeechToText();
+      await startSpeechToText();
     }
-  };
+    setRecordingLock(false);
+  }, [isRecording, recordingLock, startSpeechToText, stopSpeechToText]);
 
   const clearUserData = () => {
     setUserAnswer("");
     setFinalAnswer("");
-    results.length = 0;
+    setResults([]);
   };
 
   const storeAnswerToDb = async () => {
@@ -197,7 +203,7 @@ export const QuestionsSection = ({
 
         <div className="">
           {results.length > 0 || isRecording ? (
-            <ScrollArea className="h-40 w-full rounded-md  bg-blue-300/70 border border-blue-500 px-5 py-5">
+            <ScrollArea className="h-40 w-full rounded-md bg-blue-300/70 border border-blue-500 px-5 py-5">
               <ul className="flex flex-col items-start text-left">
                 {results.map((result: any) => (
                   <li key={result.timestamp}>{result.transcript}</li>
@@ -235,19 +241,15 @@ export const QuestionsSection = ({
           <Button
             isLoading={isRecording}
             loadingText="recording"
-            onClick={() => {
-              RecordAnswer();
-            }}
-            disabled={loading}
+            onClick={RecordAnswer}
+            disabled={loading || recordingLock}
           >
             {isRecording ? "Stop Recording" : "Record Answer"}
           </Button>
           <Button
             isLoading={loading}
             loadingText="submitting"
-            onClick={() => {
-              storeAnswerToDb();
-            }}
+            onClick={storeAnswerToDb}
             disabled={loading}
           >
             Submit Answer
