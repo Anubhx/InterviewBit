@@ -23,11 +23,11 @@ const Header = () => {
     }, 1400);
   };
 
-  // Make sure the href for Upgrade matches your folder name exactly.
+  // Updated routes: note that the How It Works route now points to /how-it-works.
   const routes = [
     { index: 1, label: "Dashboard", href: "/dashboard" },
-    { index: 2, label: "Upgrade", href: "/upgrade" },
-    { index: 3, label: "How it works", href: "/dashboard" },
+    { index: 2, label: "Upgrade", href: "/Upgrade" },
+    { index: 3, label: "How it Works", href: "/how-it-works" },
   ];
 
   return (
@@ -47,12 +47,16 @@ const Header = () => {
       <div className="hidden lg:block">
         <ul className="flex items-center justify-between gap-9 text-md text-gray-500 font-bold cursor-pointer">
           {routes.map((route, index) => {
-            const active = pathname === route.href || pathname.includes(route.href);
+            const active =
+              pathname === route.href || pathname.includes(route.href);
             return (
               <Link
                 href={route.href}
                 key={index}
-                className={cn("transition-all hover:text-black duration-200", active && "text-black")}
+                className={cn(
+                  "transition-all hover:text-black duration-200",
+                  active && "text-black"
+                )}
               >
                 {route.label}
               </Link>
@@ -70,7 +74,9 @@ const Header = () => {
               <UserButton
                 afterSignOutUrl="/"
                 appearance={{
-                  elements: { avatarBox: "h-9 w-9" },
+                  elements: {
+                    avatarBox: "h-9 w-9",
+                  },
                 }}
               />
             </ClerkLoaded>
