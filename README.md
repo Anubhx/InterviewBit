@@ -1,10 +1,5 @@
-<div align="center">
-  <br />
-    <a href="#" target="_blank">
-      <img src="https://utfs.io/f/3db27ba7-05e6-499e-b1ba-005743a69fcd-prjuoy.png" alt="Project Banner">
-    </a>
-  <br />
 
+<<<<<<< HEAD
   <div>
     <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
     <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
@@ -80,3 +75,5 @@ NEXT_PUBLIC_DRIZZLE_DATABASE_URL=
 NEXT_PUBLIC_GEMINI_API_KEY=
 NEXT_PUBLIC_MAX_QUESTION_COUNT=
 ```
+=======
+>>>>>>> 742f9a635349d8e013d4c18fe30c35d20d173229
