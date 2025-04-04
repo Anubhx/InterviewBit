@@ -27,5 +27,5 @@ export const InputPromptsFormat = ({
   Format the output to return only an array like this ${output} 
   which stores questions and answers for ${QUESTION_COUNT} times but don't give any sort 
   extra alphanumeric letters other than alphabets and object {} 
-  symbols and store questions in question and answers in answers key of the object.`;
+  symbols and store questions in question and answers in answers key of the object. Make sure you give easy questions only.`;
 };
