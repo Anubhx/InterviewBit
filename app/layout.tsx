@@ -11,8 +11,8 @@ import { Toaster } from "@/components/ui/sonner";
 import Upgrade from "./_components/upgrade";
 
 export const metadata: Metadata = {
-  title: "InterviewAID",
-  description: "Experince the future of interviews with InterviewAID",
+  title: "Praxis",
+  description: "Experince the future of interviews with Praxis-AI",
   icons: { icon: "/logo.png" },
 };
 

@@ -41,7 +41,7 @@ const Header = () => {
             "font-mono text-5xl font-bold pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#2e3779] to-[#000] bg-clip-text text-center leading-none tracking-tighter text-transparent select-none"
           )}
         >
-          InterviewAID
+          Praxis
         </h1>
       </Link>
       <div className="hidden lg:block">
