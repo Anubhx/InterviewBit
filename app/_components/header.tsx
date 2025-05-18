@@ -90,10 +90,10 @@ const Header = () => {
               <Button
                 onClick={handleRedirectSignin}
                 isLoading={signinRedirectDelay}
-                loadingText="Logging in"
+                loadingText="Redirecting"
                 size={"sm"}
               >
-                Log In
+                Log In / Sign Up
               </Button>
             </ClerkLoaded>
           </>
